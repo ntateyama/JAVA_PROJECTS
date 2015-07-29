@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<head>
+    <title>JPA</title>
+</head>
+
+<h:body>
+  <h:form>
+    <h:panelGrid columns="2">
+      <h:outputText value="ID"/>
+      <h:inputText id="empid" value="#{indexBean.dispEmp.employeeId}"
+        required="true" />
+      <h:outputText value="FIRST NAME" />
+      <h:inputText value="#{indexBean.dispEmp.firstName}" />
+      <h:outputText value="LAST NAME" />
+      <h:inputText value="#{indexBean.dispEmp.lastName}" />
+      <h:outputText value="EMAIL" />
+      <h:inputText value="#{indexBean.dispEmp.email}" />
+      <h:outputText value="HIRE DATE" />
+      <h:inputText value="#{indexBean.dispEmp.hireDate}" >
+        <f:convertDateTime pattern="yy-MM-dd" />
+      </h:inputText>
+      <h:outputText value="JOB ID" />
+      <h:inputText value="#{indexBean.dispEmp.jobId}" />
+    </h:panelGrid>
+    <h:message for="empid" />
+    <br />
+    <h:commandButton value="GET" action="#{indexBean.actionGetEmp}" />
+    <h:commandButton value="GET(REFRESH)"
+       action="#{indexBean.actionGetEmpRefresh}" />
+       <br />
+     <h:commandButton value="CREATE" action="#{indexBean.actionCreateEmp}" />
+     <h:commandButton value="UPDATE" action="#{indexBean.actionUpdateEmp}" />
+     <h:commandButton value="REMOVE" action="#{indexBean.actionRemoveEmp}" />
+     <h:commandButton value="CLEAR" action="#{indexBean.actionClearEmp}" />
+  </h:form>
+</h:body>
+</html>
